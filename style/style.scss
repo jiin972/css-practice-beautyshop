@@ -51,7 +51,15 @@ body {
 
 .products {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1.3fr;
+  background-color: $borderColor;
+  gap: $borderWidth;
+
+  .product__info {
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1.5fr 1fr;
+  }
 
   .product__img {
     background-image: url("https://picsum.photos/200/300");
@@ -60,5 +68,9 @@ body {
   .product__info {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
+    background-color: $borderColor;
+  }
+  .product__header {
+    background-color: white;
   }
 }
