@@ -7,6 +7,8 @@ $borderColor: rgba(
 
 $borderWidth: 2px;
 
+$textGap: 10px;
+
 body {
   height: 100vh;
   display: grid;
@@ -55,22 +57,74 @@ body {
   background-color: $borderColor;
   gap: $borderWidth;
 
-  .product__info {
-    background-color: white;
-    display: grid;
-    grid-template-rows: 1.5fr 1fr;
-  }
-
   .product__img {
     background-image: url("https://picsum.photos/200/300");
     background-size: cover;
   }
   .product__info {
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    background-color: $borderColor;
+    grid-template-rows: 1.5fr 1fr;
+    gap: $borderWidth;
+    .product__header {
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      padding: 0px 50px;
+      text-transform: uppercase;
+      font-weight: 500;
+      .product__category {
+        font-size: 22px;
+      }
+      .product__title {
+        font-size: 45px;
+      }
+      .product__add-to-cart {
+        margin-top: 30px;
+        display: flex;
+        gap: 60px;
+        .product__price {
+          font-size: 36px;
+        }
+        .product__qty {
+          font-size: 36px;
+          display: flex;
+          gap: $textGap;
+          .product__minus {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
   }
-  .product__header {
-    background-color: white;
+
+  .product__footer {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: $borderWidth;
+    & > div {
+      background-color: white;
+    }
+    .product__description p {
+      width: 70%;
+      font-size: 14px;
+      margin: 0 auto;
+      padding: 25px 35px;
+    }
+    .product__faq {
+      padding: 50px 50px;
+      display: flex;
+      flex-direction: column;
+      gap: $textGap;
+    }
+    .product__question {
+      border-bottom: $borderWidth solid $borderColor;
+      display: flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding-bottom: 10px;
+    }
   }
 }
